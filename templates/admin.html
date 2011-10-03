@@ -1,0 +1,23 @@
+{% extends "_base.html" %}
+{% block headcontent %}
+{% endblock %}
+
+{% block bodycontent %}
+
+<form action='admin' method='POST'>
+  <input type='text' name='urlpath' class='url'></input><br>
+  <input type='submit'>
+</form>
+
+<table>
+  <thead>
+    <tr><td>Path</td><td>Key</td><tr>
+  </thead>
+  <tbody>
+    {% for site in sites %}
+      <tr><td>{{site.path}}</td><td>{{site.key.name}}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>  
+
+{% endblock %}
